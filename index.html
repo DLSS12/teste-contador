@@ -14,7 +14,8 @@
         document.getElementById('clickButton').addEventListener('click', function() {
             contador++;
             localStorage.setItem('contador', contador);
-
+            // Envia a contagem para a página 2
+            popup.postMessage(contador, '*');
         });
 
         document.getElementById('resetButton').addEventListener('click', function() {
