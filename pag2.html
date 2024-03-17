@@ -8,9 +8,17 @@
 <body>
     <p>Contagem de cliques: <span id="clickCount"></span></p>
     <script>
-        // Recupera a contagem da localStorage
-        let contador = localStorage.getItem('contador') ? parseInt(localStorage.getItem('contador')) : 0;
-        document.getElementById('clickCount').innerText = contador;
+        function atualizarContagem() {
+            // Recupera a contagem da localStorage
+            let contador = localStorage.getItem('contador') ? parseInt(localStorage.getItem('contador')) : 0;
+            document.getElementById('clickCount').innerText = contador;
+        }
+
+        // Atualiza a contagem inicialmente
+        atualizarContagem();
+
+        // Atualiza a contagem a cada segundo
+        setInterval(atualizarContagem, 1000);
     </script>
 </body>
 </html>
