@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1</title>
+</head>
+<body>
+    <button id="clickButton">Clique Aqui</button>
+    <button id="resetButton">Zerar Contador</button>
+    <script>
+        let contador = localStorage.getItem('contador') ? parseInt(localStorage.getItem('contador')) : 0;
+
+        document.getElementById('clickButton').addEventListener('click', function() {
+            contador++;
+            localStorage.setItem('contador', contador);
+
+        });
+
+        document.getElementById('resetButton').addEventListener('click', function() {
+            contador = 0;
+            localStorage.setItem('contador', contador);
+            alert('Contador resetado!');
+        });
+    </script>
+</body>
+</html>
